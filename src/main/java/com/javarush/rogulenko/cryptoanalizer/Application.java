@@ -2,7 +2,7 @@ package com.javarush.rogulenko.cryptoanalizer;
 
 import com.javarush.rogulenko.cryptoanalizer.controllers.MainController;
 import com.javarush.rogulenko.cryptoanalizer.entity.Result;
-import com.javarush.rogulenko.exceptions.AppException;
+import com.javarush.rogulenko.cryptoanalizer.exceptions.AppException;
 
 import java.util.Arrays;
 
