@@ -7,6 +7,7 @@ public class Decoder implements Action{
 
     @Override
     public Result execute(String[] parameters) {
+        System.out.println(parameters[0] + ", " + parameters[1] + ", " + parameters[2]);
         return new Result("All right Decoder", ResultCode.OK);
     }
 }
