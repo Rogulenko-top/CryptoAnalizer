@@ -39,6 +39,7 @@ public class ConsoleRunner {
             1.Encrypt
             2.Decrypt
             3.Brude force
+            4.Exit
             """;
 
     public static final String INCORRECT_SELECTION = "Incorrect selection";
@@ -47,7 +48,6 @@ public class ConsoleRunner {
      if (args.length == 0) {
          Scanner keyboard = new Scanner(System.in);
          int mode = getMode(keyboard);
-
          mode--;
          args = new String[QUESTIONS[mode].length];
          args[0] = QUESTIONS[mode][0][0];
@@ -69,12 +69,14 @@ public class ConsoleRunner {
                 case "1" -> 1;
                 case "2" -> 2;
                 case "3" -> 3;
+                case "4" -> 4;
                 default -> {
                     System.out.println(INCORRECT_SELECTION);
                     yield -1;
                 }
             };
         } while(mode < 0);
+        if(mode == 4){System.exit(0);}
         return mode;
     }
 }
