@@ -1,15 +1,13 @@
 package com.javarush.rogulenko.cryptoanalizer.controllers;
 
-import com.javarush.rogulenko.cryptoanalizer.commands.Action;
-import com.javarush.rogulenko.cryptoanalizer.commands.BrudeForce;
-import com.javarush.rogulenko.cryptoanalizer.commands.Decoder;
-import com.javarush.rogulenko.cryptoanalizer.commands.Encoder;
+import com.javarush.rogulenko.cryptoanalizer.commands.*;
 import com.javarush.rogulenko.cryptoanalizer.exceptions.AppException;
 
 public enum Actions {
     ENCODE(new Encoder()),
     DECODE(new Decoder()),
-    BRUDEFORCE(new BrudeForce());
+    BRUTEFORCE(new BruteForce()),
+    EXIT(new Exit());
 
     private final Action action;
 

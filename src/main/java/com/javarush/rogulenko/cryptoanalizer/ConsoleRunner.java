@@ -31,6 +31,9 @@ public class ConsoleRunner {
                     {"Enter source (full path OR only filename OR Enter for text.txt)", "text.txt"},
                     {"Enter destination (full path OR only filename OR Enter for brudeforce.txt)", "brudeforce.txt"},
             },
+            {
+                    {"Exit"},
+            }
 
     };
 
@@ -76,7 +79,6 @@ public class ConsoleRunner {
                 }
             };
         } while(mode < 0);
-        if(mode == 4){System.exit(0);}
         return mode;
     }
 }

@@ -12,8 +12,10 @@ import java.util.List;
 public class FilenameValidator {
     public static final List<String> FORBIDDEN_DIRS_FILES = List.of(".bash_history", ".bash_profile", "etc", "proc");
 
+    public static final String SYSTEM_SEPARATOR = System.getProperty("file.separator");
+
     private Path validatePath(String filename){
-        for(String pathPart : filename.split(System.getProperty("file.separator"))){
+        for(String pathPart : filename.split(SYSTEM_SEPARATOR)){
             if(FORBIDDEN_DIRS_FILES.contains(pathPart)){
                 throw new FileProcessingException("Path contains forbidden part: " + pathPart);
             }
@@ -31,17 +33,18 @@ public class FilenameValidator {
 
         if(Files.exists(path)){
             if(Files.isDirectory(path)){
-                throw new FileProcessingException("File is a directory");
+                throw new FileProcessingException("File" + path + " is a directory");
             }
 
             if(Files.isWritable(path)){
-                throw new FileProcessingException("File is not accessible for writing");
+                throw new FileProcessingException("File" + path + " is not accessible for writing");
             }
         }
     }
 
     public void validateForReading(String filename) {
         Path path = validatePath(filename);
+
         if(Files.notExists(path)){
             throw new FileProcessingException("File doesn't exist");
         }
@@ -49,8 +52,8 @@ public class FilenameValidator {
             throw new FileProcessingException("File is a directory");
         }
 
-        if(!Files.isWritable(path)){
-            throw new FileProcessingException("File is not accessible for writing");
+        if(!Files.isReadable(path)){
+            throw new FileProcessingException("You don't have permission to read file");
         }
 
     }
