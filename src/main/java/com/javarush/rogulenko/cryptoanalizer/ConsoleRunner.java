@@ -22,14 +22,9 @@ public class ConsoleRunner {
             },
             {
                     {"decode"},
-                    {"Enter source (full path OR only filename OR Enter for text.txt)", "text.txt"},
+                    {"Enter source (full path OR only filename OR Enter for text.txt)", "encrypted.txt"},
                     {"Enter destination (full path OR only filename OR Enter for decrypted.txt)", "decrypted.txt"},
                     {"Enter key (int number OR Enter for key=1) :", "1"},
-            },
-            {
-                    {"brudeforce"},
-                    {"Enter source (full path OR only filename OR Enter for text.txt)", "text.txt"},
-                    {"Enter destination (full path OR only filename OR Enter for brudeforce.txt)", "brudeforce.txt"},
             },
             {
                     {"Exit"},
@@ -41,8 +36,7 @@ public class ConsoleRunner {
             Please select mode:
             1.Encrypt
             2.Decrypt
-            3.Brude force
-            4.Exit
+            3.Exit
             """;
 
     public static final String INCORRECT_SELECTION = "Incorrect selection";
@@ -72,7 +66,6 @@ public class ConsoleRunner {
                 case "1" -> 1;
                 case "2" -> 2;
                 case "3" -> 3;
-                case "4" -> 4;
                 default -> {
                     System.out.println(INCORRECT_SELECTION);
                     yield -1;

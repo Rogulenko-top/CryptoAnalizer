@@ -6,8 +6,8 @@ public class Alphabet {
     private Alphabet() {
     }
 
-    private static final String rus = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    private static final String symbols = "\n~.,`:-!?";
+    private static final String rus = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    private static final String symbols = "\n★☆✿✤✦❉❥❤❧❶❷❸❹❺";
 
     public static final char[] CHARS = (rus.toLowerCase() + symbols).toCharArray();
 

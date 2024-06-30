@@ -6,7 +6,6 @@ import com.javarush.rogulenko.cryptoanalizer.exceptions.AppException;
 public enum Actions {
     ENCODE(new Encoder()),
     DECODE(new Decoder()),
-    BRUTEFORCE(new BruteForce()),
     EXIT(new Exit());
 
     private final Action action;
